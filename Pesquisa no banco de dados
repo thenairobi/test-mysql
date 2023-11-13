@@ -1,0 +1,11 @@
+/* Query para pesquisar de nome do cliente, cor da casa, bairro e modelo do carro */
+
+SELECT 
+    cl.nome AS Nome_Cliente,
+    casa.cor AS Cor_Casa,
+    bai.nome AS Bairro,
+    car.modelo AS Modelo_Carro
+FROM cliente cl
+LEFT JOIN casa ON cl.id_cliente = casa.fk_cliente
+LEFT JOIN bairro bai ON casa.fk_bairro = bai.id_bairro
+LEFT JOIN carro car ON cl.id_cliente = car.fk_cliente;
